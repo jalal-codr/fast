@@ -5,11 +5,11 @@ app.use(express.json());
 const arr = ['hello']
 
 app.get('/',(req,res)=>{
-    res.send('hello world')
+    res.send('crazy panda !')
 })
 
 
-app.post ('/post',(req,res)=>{
+app.post ('/setpost',(req,res)=>{
     const person = {
         name : req.body.name,
         age : req.body.age
