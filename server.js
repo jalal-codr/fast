@@ -25,5 +25,5 @@ app.get('/post',(req,res)=>{
 
 
 
-const port = 7000
+const port = 7000 || process.env.Port
 app.listen(port,()=> console.log(`server runing on ${port}`));
