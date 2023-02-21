@@ -1,8 +1,12 @@
 const express = require('express')
 const app = express()
 app.use(express.json());
+const cors = require('cors')
+app.use(cors())
+
 
 const arr = ['hello']
+
 
 app.get('/',(req,res)=>{
     res.send('crazy panda !')
@@ -10,12 +14,14 @@ app.get('/',(req,res)=>{
 
 
 app.post ('/setpost',(req,res)=>{
-    const person = {
-        name : req.body.name,
-        age : req.body.age
-    }
+    let person = 
+        {
+            name : req.body.name,
+            pswd : req.body.pswd
+        }
+    
     arr.push(person)
-    console.log('person saved')
+    res.send(person);
 })
 
 
