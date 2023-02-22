@@ -41,12 +41,11 @@ app.get('/',(req,res)=>{
 
 
 app.post ('/setpost',(req,res)=>{
-    let data = new data(
-        {
+    let data = {
             name : req.body.name,
             pswd : req.body.pswd
         }
-    )
+
     arr.push(data)
 })
 
