@@ -1,11 +1,38 @@
 const express = require('express')
 const app = express()
+const mongoose = require("mongoose")
 app.use(express.json());
 const cors = require('cors')
-app.use(cors())
+app.use(cors({
+    origin : "*",
+
+}))
+const arr = []
+
+/*mongoose.set('strictQuery',false)
+
+//DB connection
+const mongoDB = "mongodb+srv://panda:panda@first.70gby0l.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect(mongoDB,()=>console.log("DB connection sucessful"))
 
 
-const arr = ['hello']
+const rr = ['hello']
+
+//DB schema
+const Schema = mongoose.Schema
+const template = new Schema({
+    id : Number,
+    name : {
+        type:String,
+        required: true
+    },
+    pswd :{
+        type : String,
+        required : true
+    }
+
+})
+const data = mongoose.model("MyTabel",template)*/
 
 
 app.get('/',(req,res)=>{
@@ -14,14 +41,13 @@ app.get('/',(req,res)=>{
 
 
 app.post ('/setpost',(req,res)=>{
-    let person = 
+    let data = new data(
         {
             name : req.body.name,
             pswd : req.body.pswd
         }
-    
-    arr.push(person)
-    res.send(person);
+    )
+    arr.push(data)
 })
 
 
