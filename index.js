@@ -47,6 +47,7 @@ app.post ('/setpost',(req,res)=>{
         }
 
     arr.push(data)
+    res.send(data);
 })
 
 
